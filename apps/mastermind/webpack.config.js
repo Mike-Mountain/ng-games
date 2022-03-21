@@ -28,7 +28,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: 'container',
+    uniqueName: 'mastermind',
     publicPath: 'auto',
   },
   optimization: {
@@ -44,8 +44,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {
-        mastermind: 'http://localhost:4201/remoteEntry.js',
+      name: 'mastermind',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Module': 'apps/mastermind/src/app/remote-entry/entry.module.ts',
       },
       shared: share({
         '@angular/core': {
