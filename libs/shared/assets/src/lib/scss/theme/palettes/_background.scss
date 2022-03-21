@@ -1,0 +1,35 @@
+$background-values: 60, 65, 92;
+$containerBackground-values: 91, 99, 138;
+
+$background: (
+  50 : #e8e9ec,
+  100 : #c6c8d1,
+  200 : #a1a4b2,
+  300 : #7b7f93,
+  400 : #424864,
+  500 : #292d3e,
+  600 : #3c415c,
+  700 : #333852,
+  800 : #2b3048,
+  900 : #1d2136,
+  A100 : #7c8eff,
+  A200 : #4962ff,
+  A400 : #1636ff,
+  A700 : #0022fc,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
