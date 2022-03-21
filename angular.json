@@ -1,7 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "assets": "libs/shared/assets",
     "container": "apps/container",
-    "container-e2e": "apps/container-e2e"
+    "container-e2e": "apps/e2e/container-e2e"
   }
 }
