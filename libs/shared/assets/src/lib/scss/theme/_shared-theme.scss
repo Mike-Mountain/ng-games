@@ -9,11 +9,13 @@
 @include mat.core();
 @import 'palettes/primary';
 @import 'palettes/accent';
+@import 'palettes/background';
 @import 'palettes/warn';
 
 // Define the palettes for your theme
 $shared-primary: mat.define-palette($primary);
-$shared-accent: mat.define-palette($accent, A200, A100, A400);
+$shared-accent: mat.define-palette($accent);
+$shared-background: mat.define-palette($background);
 
 // The warn palette is optional (defaults to red).
 $shared-warn: mat.define-palette($warn);
@@ -22,23 +24,24 @@ $shared-warn: mat.define-palette($warn);
 // theming systems such as "color" or "typography".
 
 $shared-dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $shared-primary,
-      accent: $shared-accent,
-      warn: $shared-warn,
-    ),
-  )
+    (
+      color: (
+        primary: $shared-primary,
+        accent: $shared-accent,
+        warn: $shared-warn,
+        background: $shared-background
+      ),
+    )
 );
 
 $shared-light-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $shared-primary,
-      accent: $shared-accent,
-      warn: $shared-warn,
-    ),
-  )
+    (
+      color: (
+        primary: $shared-primary,
+        accent: $shared-accent,
+        warn: $shared-warn,
+      ),
+    )
 );
 
 // Include theme styles for core and each component used in your app.

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/container-lib",
+  "sourceRoot": "libs/container-lib/src",
+  "prefix": "ctr",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/container-lib"],
+      "options": {
+        "jestConfig": "libs/container-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/container-lib/src/**/*.ts",
+          "libs/container-lib/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
