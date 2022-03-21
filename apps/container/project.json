@@ -108,6 +108,12 @@
       "options": {
         "commands": ["nx serve mastermind", "nx serve container"]
       }
+    },
+    "serve-mfe-network": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx serve mastermind --host=192.168.0.100", "nx serve container --host=192.168.0.100"]
+      }
     }
   },
   "tags": []

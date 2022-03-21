@@ -2,29 +2,23 @@
   height: 100%;
   width: 95%;
   margin: 0 auto !important;
-  border: 1px solid var(--accent);
   border-radius: 10px;
+  background-color: var(--containerBackground);
   display: grid;
-  grid-template-columns: 20% 1fr;
-  padding: .75rem !important;
-  grid-gap: .75rem;
-}
-
-.sidebar {
-  height: 100%;
+  grid-template-columns: 13% 1fr;
+  padding: .25rem !important;
+  grid-gap: .25rem;
 }
 
 .pins-container {
   display: grid;
-  height: 10%;
-  grid-gap: .5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  padding: .75rem;
 }
 
 .pin {
-  border: 1px solid white;
+  background-color: var(--background);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
   width: 1.1rem;
   height: 1.1rem;
   border-radius: 50%;
@@ -32,14 +26,15 @@
 
 .colors-container {
   width: 100%;
-  height: 10%;
+  height: 100%;
   display: flex;
 }
 
 .color-block {
-  margin: .5rem;
-  width: 25%;
-  background-color: var(--containerBackground);
+  width: 20%;
+  height: 90%;
+  margin: auto;
+  background-color: var(--background);
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
 }
@@ -47,6 +42,6 @@
 @media screen and (min-width: 910px) {
   .mastermind-game-board {
     width: 50%;
-    grid-template-columns: 15% 1fr;
+    grid-template-columns: 10% 1fr;
   }
 }

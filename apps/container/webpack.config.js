@@ -45,7 +45,8 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       remotes: {
-        mastermind: 'http://localhost:4201/remoteEntry.js',
+        // mastermind: 'http://localhost:4201/remoteEntry.js',
+        mastermind: 'http://192.168.0.100:4201/remoteEntry.js',
       },
       shared: share({
         '@angular/core': {
