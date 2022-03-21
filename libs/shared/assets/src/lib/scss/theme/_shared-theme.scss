@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '../../../../../../node_modules/@angular/material/index' as mat;
+@use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -44,30 +44,4 @@ $shared-light-theme: mat.define-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-.light-theme {
-  @include mat.core-color($shared-light-theme);
-  @include mat.button-color($shared-light-theme);
-  --contenBg: rgb(255, 255, 255);
-  --menuBg: rgb(241, 241, 241);
-  --border: rgb(205, 205, 205);
-  --highlight: rgb(251, 250, 234);
-  --text-primary: rgb(4, 4, 4);
-  --text-secondary: rgb(137, 201, 191);
-  --file-text: rgb(47, 49, 216);
-}
-
-.dark-theme {
-  @include mat.core-theme($shared-dark-theme);
-  @include mat.button-theme($shared-dark-theme);
-  --contenBg: rgb(33, 36, 45);
-  --menuBg: rgb(42, 44, 56);
-  --border: rgb(58, 61, 75);
-  --highlight: rgb(56, 58, 70);
-  --text-primary: rgb(240, 255, 255);
-  --text-secondary: rgb(174, 190, 218);
-  --file-text: rgb(130, 144, 170);
-
-  .mat-tree {
-    background: var(--contenBg);
-  }
-}
+@include mat.all-component-themes($shared-dark-theme)
