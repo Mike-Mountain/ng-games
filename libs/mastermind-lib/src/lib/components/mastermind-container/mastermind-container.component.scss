@@ -1,0 +1,38 @@
+.mastermind-container {
+  width: 100%;
+  height: calc(100% - 64px);
+  display: grid;
+  grid-template-rows: 4rem 1fr 6rem;
+}
+
+.computer-colors, .colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.color-block {
+  margin: 0 .5rem;
+  width: 25%;
+  height: 75%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 0, 0, 0.8);
+  &:active {
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.computer-block {
+  border: 1px solid var(--accent);
+  background-color: var(--containerBackground);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4) !important;
+}
+
+@media screen and (min-width: 910px) {
+  .computer-colors, .colors {
+    width: 55%;
+    margin: 0 auto;
+  }
+}

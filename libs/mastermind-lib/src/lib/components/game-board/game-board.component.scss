@@ -1,0 +1,52 @@
+.mastermind-game-board {
+  height: 100%;
+  width: 95%;
+  margin: 0 auto !important;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  padding: .75rem !important;
+  grid-gap: .75rem;
+}
+
+.sidebar {
+  height: 100%;
+}
+
+.pins-container {
+  display: grid;
+  height: 10%;
+  grid-gap: .5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: .75rem;
+}
+
+.pin {
+  border: 1px solid white;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+}
+
+.colors-container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+
+.color-block {
+  margin: .5rem;
+  width: 25%;
+  background-color: var(--containerBackground);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 910px) {
+  .mastermind-game-board {
+    width: 50%;
+    grid-template-columns: 15% 1fr;
+  }
+}

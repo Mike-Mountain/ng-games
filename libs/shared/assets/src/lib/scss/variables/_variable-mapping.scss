@@ -10,6 +10,11 @@
   --background: #{map-get($background, 500)};
   --containerBackground: #{map-get($background, 400)};
 
+  --red: #ce1b0d;
+  --blue: #265a99;
+  --green: #208a45;
+  --yellow: #e0ca00;
+
   --primaryValues: #{$primary-values};
   --accentValues: #{$accent-values};
   --warnValues: #{$warn-values};

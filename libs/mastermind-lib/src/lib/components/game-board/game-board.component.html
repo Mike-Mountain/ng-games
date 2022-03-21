@@ -1,0 +1,21 @@
+<figure class="mastermind-game-board">
+  <div class="sidebar">
+    <ng-container *ngFor="let turn of turns">
+      <div class="pins-container">
+        <ng-container *ngFor="let color of colors">
+          <div class="pin"></div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="input-container">
+    <ng-container *ngFor="let turn of turns">
+      <div class="colors-container">
+        <ng-container *ngFor="let color of colors">
+          <div class="color-block"></div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</figure>
