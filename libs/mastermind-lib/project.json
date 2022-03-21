@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/mastermind-lib",
+  "sourceRoot": "libs/mastermind-lib/src",
+  "prefix": "msm",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/mastermind-lib"],
+      "options": {
+        "jestConfig": "libs/mastermind-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/mastermind-lib/src/**/*.ts",
+          "libs/mastermind-lib/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

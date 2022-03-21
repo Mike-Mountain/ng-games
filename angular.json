@@ -6,6 +6,7 @@
     "container-e2e": "apps/e2e/container-e2e",
     "container-lib": "libs/container-lib",
     "mastermind": "apps/mastermind",
-    "mastermind-e2e": "apps/e2e/mastermind-e2e"
+    "mastermind-e2e": "apps/e2e/mastermind-e2e",
+    "mastermind-lib": "libs/mastermind-lib"
   }
 }
