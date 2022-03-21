@@ -1,0 +1,13 @@
+@import '../theme/palettes/primary';
+@import '../theme/palettes/accent';
+@import '../theme/palettes/warn';
+
+:root {
+  --primary: #{map-get($primary, 500)};
+  --accent: #{map-get($accent, 500)};
+  --warn: #{map-get($warn, 500)};
+
+  --primaryValues: #{$primary-values};
+  --accentValues: #{$accent-values};
+  --warnValues: #{$warn-values};
+}
