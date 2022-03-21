@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ng-games/assets": ["libs/assets/src/index.ts"]
+      "@ng-games/assets": ["libs/assets/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
