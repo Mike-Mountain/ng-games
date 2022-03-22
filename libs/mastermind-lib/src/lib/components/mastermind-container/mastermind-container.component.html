@@ -5,11 +5,8 @@
     <div class="color-block computer-block"></div>
     <div class="color-block computer-block"></div>
   </div>
-  <msm-game-board></msm-game-board>
-  <div class="colors">
-    <button class="color-block bg-red"></button>
-    <button class="color-block bg-blue"></button>
-    <button class="color-block bg-green"></button>
-    <button class="color-block bg-yellow"></button>
-  </div>
+  <msm-game-board
+    [chances]="10"
+    [colors]="['red', 'blue', 'green', 'yellow']"
+  ></msm-game-board>
 </div>

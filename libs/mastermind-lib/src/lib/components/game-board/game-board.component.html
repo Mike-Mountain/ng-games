@@ -1,16 +1,18 @@
 <figure class="mastermind-game-board">
-  <ng-container *ngFor="let turn of turns">
-    <div class="pins-container">
-      <ng-container *ngFor="let color of colors">
-        <div class="w-100 flex-center">
-          <div class="pin"></div>
-        </div>
-      </ng-container>
-    </div>
-    <div class="colors-container">
-      <ng-container *ngFor="let color of colors">
-        <div class="color-block"></div>
-      </ng-container>
-    </div>
+  <ng-container *ngIf="gameTurns.length > 0">
+    <ng-container *ngFor="let turn of gameTurns">
+      <div class="pins-container">
+        <ng-container *ngFor="let color of colors">
+          <div class="w-100 flex-center">
+            <div class="pin"></div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="colors-container">
+        <ng-container *ngFor="let color of colors">
+          <button class="color-button"></button>
+        </ng-container>
+      </div>
+    </ng-container>
   </ng-container>
 </figure>

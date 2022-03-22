@@ -2,10 +2,10 @@
   width: 100%;
   height: calc(100% - 64px);
   display: grid;
-  grid-template-rows: 4rem 1fr 6rem;
+  grid-template-rows: 4rem 1fr;
 }
 
-.computer-colors, .colors {
+.computer-colors {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 @media screen and (min-width: 910px) {
-  .computer-colors, .colors {
+  .computer-colors {
     width: 55%;
     margin: 0 auto;
   }

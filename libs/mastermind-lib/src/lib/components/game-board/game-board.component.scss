@@ -30,13 +30,14 @@
   display: flex;
 }
 
-.color-block {
+.color-button {
   width: 20%;
   height: 90%;
   margin: auto;
   background-color: var(--background);
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
+  border: none;
 }
 
 @media screen and (min-width: 910px) {
