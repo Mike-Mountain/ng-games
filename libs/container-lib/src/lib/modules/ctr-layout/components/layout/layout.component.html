@@ -3,15 +3,15 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>NG-Games</mat-toolbar>
     <mat-nav-list *ngIf="isHandset$ | async">
       <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
-      <a mat-list-item routerLink="/mastermind" (click)="drawer.close()">Mastermind</a>
+      <a mat-list-item routerLink="/code-master" (click)="drawer.close()">Code Master</a>
       <a mat-list-item routerLink="/" (click)="drawer.close()">Link 1</a>
     </mat-nav-list>
     <mat-nav-list *ngIf="(isHandset$ | async) === false">
       <a mat-list-item routerLink="/">Home</a>
-      <a mat-list-item routerLink="/mastermind">Mastermind</a>
+      <a mat-list-item routerLink="/code-master">Code Master</a>
       <a mat-list-item routerLink="/">Link 1</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -25,7 +25,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>container-lib</span>
+      <span>Ng Games</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

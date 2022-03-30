@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {
-    path: 'mastermind',
+    path: 'code-master',
     loadChildren: () =>
       import('mastermind/Module').then((m) => m.RemoteEntryModule),
   },

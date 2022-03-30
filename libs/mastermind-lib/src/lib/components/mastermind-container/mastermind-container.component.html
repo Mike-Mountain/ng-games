@@ -1,7 +1,7 @@
 <div class="mastermind-container">
   <div class="computer-colors">
     <ng-container *ngFor="let color of computerColors">
-      <div class="color-block" [class]="gameOver ? color + '-block' : 'computer-block'"></div>
+      <div class="color-block" [class]="gameOver ? 'button-' + color : 'computer-block'"></div>
     </ng-container>
   </div>
   <msm-game-board
