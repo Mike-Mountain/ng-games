@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Colors } from '../../models/mastermind.model';
+import { Color, Colors, MsmGameTurn } from '../../models/mastermind.model';
+import { TurnState } from '../../models/turn-state.enum';
+import { MastermindService } from '../../services/mastermind.service';
 
 @Component({
   selector: 'msm-game-board',
@@ -7,14 +9,28 @@ import { Colors } from '../../models/mastermind.model';
   styleUrls: ['./game-board.component.scss'],
 })
 export class GameBoardComponent implements OnInit {
-  @Input() chances = 0;
-  @Input() colors: Colors[] = [];
+  @Input() public colors: Colors[] = [];
 
-  gameTurns: never[] = [];
+  public turns: MsmGameTurn[] = [];
+  public turnState = TurnState;
 
-  constructor() {}
+  constructor(private mastermindService: MastermindService) {}
 
   ngOnInit(): void {
-    this.gameTurns = new Array(this.chances).map((i) => i as never);
+    this.turns = this.mastermindService.turns;
+  }
+
+  toggleSelected(turnState: TurnState, color: Color, selectedColor?: Colors) {
+    this.mastermindService.toggleSelectedColor(turnState, color, selectedColor);
+  }
+
+  completeTurn(turn: MsmGameTurn, idx: number) {
+    if (turn.turnState === TurnState.InProgress) {
+      turn.turnState = TurnState.Complete;
+      if (idx > 0) {
+        this.turns[idx - 1].turnState = TurnState.InProgress;
+      }
+      turn.pins = this.mastermindService.completeTurn(turn, idx);
+    }
   }
 }

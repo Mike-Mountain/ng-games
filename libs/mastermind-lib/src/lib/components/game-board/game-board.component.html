@@ -1,17 +1,47 @@
 <figure class="mastermind-game-board">
-  <ng-container *ngIf="gameTurns.length > 0">
-    <ng-container *ngFor="let turn of gameTurns">
-      <div class="pins-container">
-        <ng-container *ngFor="let color of colors">
-          <div class="w-100 flex-center">
-            <div class="pin"></div>
-          </div>
-        </ng-container>
-      </div>
-      <div class="colors-container">
-        <ng-container *ngFor="let color of colors">
-          <button class="color-button"></button>
-        </ng-container>
+  <ng-container *ngIf="turns.length > 0">
+    <ng-container *ngFor="let turn of turns; let turnIdx = index">
+      <div
+        class="turn"
+        [class.turn-disabled]="turn.turnState === turnState.NotStarted"
+        [class.turn-complete]="turn.turnState === turnState.Complete"
+      >
+        <div class="pins-container">
+          <ng-container *ngFor="let pin of turn.pins">
+            <div class="w-100 flex-center">
+              <div class="pin" [class]="pin.color + '-pin'"></div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="colors-container">
+          <ng-container *ngFor="let color of turn.colors">
+            <button
+              *ngIf="!color.selectable"
+              class="color-button"
+              [class]="'button-' + color.selectedColor"
+              [disabled]="turn.turnState !== turnState.InProgress"
+              (click)="toggleSelected(turn.turnState, color)"
+            ></button>
+            <div
+              class="color-button multi-button"
+              *ngIf="color.selectable"
+              (click)="toggleSelected(turn.turnState, color)"
+            >
+              <ng-container *ngFor="let gameColor of colors">
+                <button
+                  [class]="'color-button button-' + gameColor"
+                  [disabled]="turn.turnState !== turnState.InProgress"
+                  (click)="toggleSelected(turn.turnState, color, gameColor)"
+                ></button>
+              </ng-container>
+            </div>
+          </ng-container>
+        </div>
+        <div class="w-100 h-100 flex-center">
+          <button class="complete-button" (click)="completeTurn(turn, turnIdx)">
+            <span *ngIf="turn.turnState === turnState.Complete">✓</span>
+          </button>
+        </div>
       </div>
     </ng-container>
   </ng-container>
