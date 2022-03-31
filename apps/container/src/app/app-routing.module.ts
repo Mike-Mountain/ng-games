@@ -7,6 +7,7 @@ const appRoutes: Routes = [
     loadChildren: () =>
       import('mastermind/Module').then((m) => m.RemoteEntryModule),
   },
+  { path: '', pathMatch: 'full', redirectTo: '/code-master' },
 ];
 
 @NgModule({
