@@ -16,9 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@ng-games/assets": ["libs/assets/src/lib/*"],
-      "@ng-games/libs/mastermind/*": ["libs/mastermind-lib/src/lib/*"],
       "@ng-games/container-lib": ["libs/container-lib/src/index.ts"],
-      "@ng-games/mastermind-lib": ["libs/mastermind-lib/src/index.ts"]
+      "@ng-games/libs/mastermind/*": ["libs/mastermind-lib/src/lib/*"],
+      "@ng-games/mastermind-lib": ["libs/mastermind-lib/src/index.ts"],
+      "@ng-games/shared/game-instructions": [
+        "libs/shared/game-instructions/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

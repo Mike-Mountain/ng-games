@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/game-instructions",
+  "sourceRoot": "libs/shared/game-instructions/src",
+  "prefix": "ins",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/game-instructions"],
+      "options": {
+        "jestConfig": "libs/shared/game-instructions/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/game-instructions/src/**/*.ts",
+          "libs/shared/game-instructions/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

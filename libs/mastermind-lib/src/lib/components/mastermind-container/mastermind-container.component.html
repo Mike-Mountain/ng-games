@@ -22,7 +22,7 @@
             <h3 class="text-center">You lost the game. The computer's colors were:</h3>
             <div class="computer-colors my-2">
               <ng-container *ngFor="let color of computerColors">
-                <div class="color-block" [class]="color + '-block'"></div>
+                <div class="color-block" [class]="'button-' + color"></div>
               </ng-container>
             </div>
             <button class="w-100" mat-raised-button color="accent" (click)="playAgain()">Click to play again</button>

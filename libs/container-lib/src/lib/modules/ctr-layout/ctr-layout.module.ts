@@ -8,12 +8,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [LayoutComponent],
   imports: [
     CommonModule,
     LayoutModule,
+    MatDialogModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

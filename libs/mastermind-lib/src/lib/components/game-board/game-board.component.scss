@@ -68,45 +68,6 @@
   display: flex;
 }
 
-.color-button {
-  width: 20%;
-  height: 90%;
-  margin: auto;
-  background-color: var(--background);
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  border: none;
-
-  &:first-child {
-    border-top-left-radius: 10px !important;
-  }
-
-  &:nth-child(2) {
-    border-top-right-radius: 10px !important;
-  }
-
-  &:nth-child(3) {
-    border-bottom-left-radius: 10px !important;
-  }
-
-  &:last-child {
-    border-bottom-right-radius: 10px !important;
-  }
-}
-
-.multi-button {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  padding: 0;
-
-  button {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
-}
-
 @media screen and (min-width: 910px) {
   .mastermind-game-board {
     width: 50%;
