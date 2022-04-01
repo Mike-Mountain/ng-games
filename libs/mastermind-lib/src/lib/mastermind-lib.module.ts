@@ -7,6 +7,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ToolbarService } from '@ng-games/container-lib';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [{ path: '', component: MastermindContainerComponent }];
 
@@ -17,6 +18,7 @@ const routes: Routes = [{ path: '', component: MastermindContainerComponent }];
     RouterModule.forChild(routes),
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
   ],
   declarations: [MastermindContainerComponent, GameBoardComponent],
   providers: [
