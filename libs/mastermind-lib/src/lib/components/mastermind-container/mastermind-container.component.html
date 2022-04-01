@@ -1,26 +1,21 @@
 <div class="mastermind-container">
-  <div class="computer-colors">
-    <ng-container *ngFor="let color of computerColors">
-      <div [class]="showColors ? 'button-' + color : 'computer-block'" class="color-block"></div>
-    </ng-container>
-  </div>
-  <msm-game-board [colors]="colors"></msm-game-board>
-
-  <ng-template #gameOver>
-    <ng-container *ngIf="state === WinsState.Won">
-      <h1 class="w-100 text-center">Congratulations!!</h1>
-      <h3 class="text-center">You won the game!</h3>
-      <button (click)="playAgain()" class="w-100" color="accent" mat-raised-button>Click to play again</button>
-    </ng-container>
-    <ng-container *ngIf="state === WinsState.Lost">
-      <h1 class="w-100 text-center">Oh no :(</h1>
-      <h3 class="text-center">You lost the game. The computer's colors were:</h3>
-      <div class="computer-colors my-2">
-        <ng-container *ngFor="let color of computerColors">
-          <div [class]="'button-' + color" class="color-block"></div>
-        </ng-container>
-      </div>
-      <button (click)="playAgain()" class="w-100" color="accent" mat-raised-button>Click to play again</button>
-    </ng-container>
-  </ng-template>
+  <msm-game-board [colors]="colors" [masterColors]="computerColors" [state]="state"></msm-game-board>
 </div>
+
+<ng-template #gameOver>
+  <ng-container *ngIf="state === WinsState.Won">
+    <h1 class="w-100 text-center">Congratulations!!</h1>
+    <h3 class="text-center">You won the game!</h3>
+    <button (click)="playAgain()" class="w-100" color="accent" mat-raised-button>Click to play again</button>
+  </ng-container>
+  <ng-container *ngIf="state === WinsState.Lost">
+    <h1 class="w-100 text-center">Oh no :(</h1>
+    <h3 class="text-center">You lost the game. The computer's colors were:</h3>
+    <div class="computer-colors my-2">
+      <ng-container *ngFor="let color of computerColors">
+        <div [class]="'button-' + color" class="color-block"></div>
+      </ng-container>
+    </div>
+    <button (click)="playAgain()" class="w-100" color="accent" mat-raised-button>Click to play again</button>
+  </ng-container>
+</ng-template>
