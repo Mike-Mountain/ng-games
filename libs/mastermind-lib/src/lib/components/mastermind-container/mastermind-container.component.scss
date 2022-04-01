@@ -1,8 +1,6 @@
 .mastermind-container {
   width: 100%;
   height: calc(100% - 64px);
-  display: grid;
-  grid-template-rows: 4rem 1fr;
 }
 
 .computer-colors {
@@ -10,6 +8,8 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 72%;
+  //margin-right: 2.85rem;
 }
 
 .color-block {

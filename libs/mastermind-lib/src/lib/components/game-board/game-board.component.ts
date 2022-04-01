@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Color, Colors, MsmGameTurn } from '../../models/mastermind.model';
 import { TurnState } from '../../models/turn-state.enum';
 import { MastermindService } from '../../services/mastermind.service';
+import { WinState } from '../../models/win-state.enum';
 
 @Component({
   selector: 'msm-game-board',
@@ -10,9 +11,12 @@ import { MastermindService } from '../../services/mastermind.service';
 })
 export class GameBoardComponent implements OnInit {
   @Input() public colors: Colors[] = [];
+  @Input() public masterColors: Colors[] = [];
+  @Input() public state = WinState.InProgress;
 
   public turns: MsmGameTurn[] = [];
   public turnState = TurnState;
+  public winState = WinState;
 
   constructor(private mastermindService: MastermindService) {}
 

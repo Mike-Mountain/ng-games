@@ -1,45 +1,62 @@
 <figure class="mastermind-game-board">
+  <div class="master-turn">
+    <div class="master-colors-container">
+      <ng-container *ngFor="let color of masterColors">
+        <button
+          class="color-button master-color"
+          [ngClass]="state !== winState.InProgress ? 'button-' + (color || 'undefined') : ''"
+        ></button>
+      </ng-container>
+    </div>
+    <hr class="game-divider">
+  </div>
   <ng-container *ngIf="turns.length > 0">
     <ng-container *ngFor="let turn of turns; let turnIdx = index">
       <div
-        class="turn"
-        [class.turn-disabled]="turn.turnState === turnState.NotStarted"
         [class.turn-complete]="turn.turnState === turnState.Complete"
+        [class.turn-disabled]="turn.turnState === turnState.NotStarted"
+        class="turn"
       >
         <div class="pins-container">
           <ng-container *ngFor="let pin of turn.pins">
             <div class="w-100 flex-center">
-              <div class="pin" [class]="pin.color + '-pin'"></div>
+              <div [class]="pin.color + '-pin'" class="pin"></div>
             </div>
           </ng-container>
         </div>
         <div class="colors-container">
           <ng-container *ngFor="let color of turn.colors">
             <button
+              (click)="toggleSelected(turn.turnState, color)"
               *ngIf="!color.selectable"
-              class="color-button"
               [class]="'button-' + color.selectedColor"
               [disabled]="turn.turnState !== turnState.InProgress"
-              (click)="toggleSelected(turn.turnState, color)"
+              class="color-button"
             ></button>
             <div
-              class="color-button multi-button"
-              *ngIf="color.selectable"
               (click)="toggleSelected(turn.turnState, color)"
+              *ngIf="color.selectable"
+              class="color-button multi-button"
             >
               <ng-container *ngFor="let gameColor of colors">
                 <button
+                  (click)="toggleSelected(turn.turnState, color, gameColor)"
                   [class]="'color-button button-' + gameColor"
                   [disabled]="turn.turnState !== turnState.InProgress"
-                  (click)="toggleSelected(turn.turnState, color, gameColor)"
                 ></button>
               </ng-container>
             </div>
           </ng-container>
         </div>
         <div class="w-100 h-100 flex-center">
-          <button class="complete-button" (click)="completeTurn(turn, turnIdx)">
-            <span *ngIf="turn.turnState === turnState.Complete">✓</span>
+          <button
+            class="complete-button"
+            [class.complete]="turn.turnState === turnState.Complete"
+            (click)="completeTurn(turn, turnIdx)"
+          >
+            <ng-container *ngIf="turn.turnState === turnState.Complete">
+              <mat-icon>done</mat-icon>
+            </ng-container>
           </button>
         </div>
       </div>
