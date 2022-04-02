@@ -31,4 +31,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Check version
-        run: ng version
+        run: npm run get-version

@@ -4,11 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
+    "get-version": "ng version",
     "serve-mfe": "nx run container:serve-mfe",
     "serve-mfe-network": "nx run container:serve-mfe-network",
-    "build": "nx build",
     "build-mfe": "nx run container:build-mfe",
-    "test": "nx test",
+    "build-affected": "nx run affected:build --base=origin/develop",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main"
   },
   "private": true,
