@@ -31,4 +31,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Lint
-        run: npm run ng affected:lint --base=origin/main
+        run: npm run ng affected:lint --base=[SHA1]
