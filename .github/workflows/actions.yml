@@ -31,4 +31,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Lint
-        run: npm run ng affected:lint --base=[SHA1]
+        run: |
+          npm run nx container:lint
+          npm run nx mastermind:lint
+          npm run nx container-lib:lint
+          npm run nx mastermind-lib:lint
+          npm run nx game-instructions:lint

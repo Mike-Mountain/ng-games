@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "nx",
+    "nx": "nx",
     "get-version": "ng version",
     "serve-mfe": "nx run container:serve-mfe",
     "serve-mfe-network": "nx run container:serve-mfe-network",
