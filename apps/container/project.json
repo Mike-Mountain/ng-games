@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/container",
         "index": "apps/container/src/index.html",
@@ -17,17 +19,22 @@
         "assets": [
           "apps/container/src/favicon.ico",
           "apps/container/src/assets",
+          "apps/container/src/manifest.webmanifest",
           {
             "glob": "*/**",
             "input": "libs/shared/assets/src/lib/images",
             "output": "assets/images"
           }
         ],
-        "styles": ["apps/container/src/styles.scss"],
+        "styles": [
+          "apps/container/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/container/webpack.config.js"
-        }
+        },
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/container/ngsw-config.json"
       },
       "configurations": {
         "production": {
@@ -97,16 +104,30 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/container"],
+      "outputs": [
+        "coverage/apps/container"
+      ],
       "options": {
         "jestConfig": "apps/container/jest.config.js",
         "passWithNoTests": true
       }
     },
+    "build-mfe": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build mastermind",
+          "nx build container"
+        ]
+      }
+    },
     "serve-mfe": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["nx serve mastermind", "nx serve container"]
+        "commands": [
+          "nx serve mastermind",
+          "nx serve container"
+        ]
       }
     },
     "serve-mfe-network": {

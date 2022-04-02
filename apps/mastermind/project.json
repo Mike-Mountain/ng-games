@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/mastermind",
         "index": "apps/mastermind/src/index.html",
@@ -18,7 +20,9 @@
           "apps/mastermind/src/favicon.ico",
           "apps/mastermind/src/assets"
         ],
-        "styles": ["apps/mastermind/src/styles.scss"],
+        "styles": [
+          "apps/mastermind/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/mastermind/webpack.config.js"
@@ -93,7 +97,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/mastermind"],
+      "outputs": [
+        "coverage/apps/mastermind"
+      ],
       "options": {
         "jestConfig": "apps/mastermind/jest.config.js",
         "passWithNoTests": true
