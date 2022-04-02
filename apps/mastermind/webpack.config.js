@@ -15,6 +15,9 @@ const share = mf.share;
 const tsConfigPath =
   process.env.NX_TSCONFIG_PATH ??
   path.join(__dirname, '../../tsconfig.base.json');
+// const tsConfigPath = process.env.NX_TSCONFIG_PATH
+//   ? path.join(__dirname, '../../' + process.env.NX_TSCONFIG_PATH)
+//   : path.join(__dirname, '../../tsconfig.base.json');
 
 const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();

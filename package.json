@@ -7,6 +7,7 @@
     "serve-mfe": "nx run container:serve-mfe",
     "serve-mfe-network": "nx run container:serve-mfe-network",
     "build": "nx build",
+    "build-mfe": "nx run container:build-mfe",
     "test": "nx test",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main"
   },
@@ -22,7 +23,9 @@
     "@angular/material": "^13.3.0",
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
+    "@angular/pwa": "^13.3.1",
     "@angular/router": "~13.2.0",
+    "@angular/service-worker": "~13.2.0",
     "@nrwl/angular": "13.9.3",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",

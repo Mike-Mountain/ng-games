@@ -8,10 +8,17 @@
     fixedInViewport
   >
     <mat-toolbar>NG-Games</mat-toolbar>
-    <mat-nav-list>
-      <a (click)="route('/', drawer, 'Ng Games')" mat-list-item>Home</a>
-      <a (click)="route('/code-master', drawer, 'Code Master')" mat-list-item>Code Master</a>
-      <a (click)="route('/', drawer, 'Ng Games')" mat-list-item>Link 1</a>
+    <mat-nav-list class="navigation-container">
+      <div class="navigation">
+        <a (click)="route('/', drawer, 'Ng Games')" mat-list-item>Home</a>
+        <a (click)="route('/code-master', drawer, 'Code Master')" mat-list-item>Code Master</a>
+      </div>
+      <div class="w-100 flex-column flex-center">
+        <button (click)="getNewVersion()" *ngIf="hasUpdate" class="w-90 mx-auto mb-2" color="accent" mat-raised-button>
+          New Version Available!
+        </button>
+        <small class="w-100 text-center">V0.01</small>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,12 +28,21 @@
         *ngIf="isHandset$ | async"
         aria-label="Toggle sidenav"
         mat-icon-button
-        type="button">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        type="button"
+      >
+        <mat-icon
+          [matBadge]="hasUpdate ? 1 : null"
+          aria-label="Side nav toggle icon"
+          matBadgeColor="accent"
+          matBadgePosition="before"
+          matBadgeSize="small"
+        >
+          menu
+        </mat-icon>
       </button>
       <div class="w-100 flex-between">
         <span>{{title$ | async}}</span>
-        <button mat-icon-button (click)="openInstructions()">?</button>
+        <button (click)="openInstructions()" mat-icon-button>?</button>
       </div>
     </mat-toolbar>
     <router-outlet></router-outlet>

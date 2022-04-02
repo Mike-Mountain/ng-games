@@ -15,3 +15,16 @@
   top: 0;
   z-index: 1;
 }
+
+.navigation-container {
+  height: calc(100% - 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+}

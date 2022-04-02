@@ -5,6 +5,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { ToolbarService } from '../../services/toolbar.service';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'ctr-layout',
@@ -14,17 +15,24 @@ import { Router } from '@angular/router';
 export class LayoutComponent {
   public isHandset$: Observable<boolean>;
   public title$: Observable<string>;
+  public hasUpdate = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
     private toolbarService: ToolbarService,
-    private router: Router
+    private router: Router,
+    private updates: SwUpdate
   ) {
     this.isHandset$ = breakpointObserver.observe(Breakpoints.Handset).pipe(
       map((result) => result.matches),
       shareReplay()
     );
     this.title$ = this.toolbarService.getTitle();
+    updates.versionUpdates.subscribe((event) => {
+      if (event.type === 'VERSION_DETECTED') {
+        this.hasUpdate = true;
+      }
+    });
   }
 
   route(path: string, drawer: MatSidenav, title: string) {
@@ -36,5 +44,9 @@ export class LayoutComponent {
 
   openInstructions() {
     this.toolbarService.showInstructions();
+  }
+
+  getNewVersion() {
+    this.updates.activateUpdate().then(() => window.location.reload());
   }
 }
