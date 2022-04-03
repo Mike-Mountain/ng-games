@@ -6,8 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the develop branch
   push:
-    branches:
-      - '!master'
+    branches: [ firebase ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,23 +28,11 @@ jobs:
         run: npm install
 
       # Runs a set of commands using the runners shell
-      - name: Lint
-        run: |
-          npm run nx run container:lint
-          npm run nx run mastermind:lint
-          npm run nx run container-lib:lint
-          npm run nx run mastermind-lib:lint
-          npm run nx run game-instructions:lint
-
-      - name: Test
-        run: |
-          npm run nx run container:test --codeCoverage
-          npm run nx run mastermind:test --codeCoverage
-          npm run nx run container-lib:test --codeCoverage
-          npm run nx run mastermind-lib:test --codeCoverage
-          npm run nx run game-instructions:test --codeCoverage
-
       - name: Build
         run: |
           npm run nx run container:build
           npm run nx run mastermind:build
+
+      - name: Deploy
+        run: firebase deploy
+
