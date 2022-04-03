@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mountain-games": {
+      "hosting": {
+        "container": [
+          "mountain-games"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mountain-games"
+  }
+}
