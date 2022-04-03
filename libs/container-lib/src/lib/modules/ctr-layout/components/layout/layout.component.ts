@@ -6,6 +6,12 @@ import { ToolbarService } from '../../services/toolbar.service';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
+import {
+  AuthAction,
+  AuthContainerComponent,
+  AuthDialogService,
+} from '@ng-games/auth';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'ctr-layout',
@@ -21,7 +27,8 @@ export class LayoutComponent {
     private breakpointObserver: BreakpointObserver,
     private toolbarService: ToolbarService,
     private router: Router,
-    private updates: SwUpdate
+    private updates: SwUpdate,
+    private authDialog: AuthDialogService
   ) {
     this.isHandset$ = breakpointObserver.observe(Breakpoints.Handset).pipe(
       map((result) => result.matches),
@@ -48,5 +55,11 @@ export class LayoutComponent {
 
   getNewVersion() {
     this.updates.activateUpdate().then(() => window.location.reload());
+  }
+
+  openAuth() {
+    const dialogRef: MatDialogRef<AuthContainerComponent> =
+      this.authDialog.openAuthDialog({ data: { action: AuthAction.LOGIN } });
+    dialogRef.afterClosed().subscribe((closed) => console.log(closed));
   }
 }

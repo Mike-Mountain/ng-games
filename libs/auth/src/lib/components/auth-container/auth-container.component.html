@@ -1,0 +1,10 @@
+<section class="auth">
+  <h1 class="text-center">{{authConfig?.action}}</h1>
+  <hr class="mat-divider w-85 mx-auto mb-3 mt-1">
+  <ng-container *ngIf="authConfig?.action === action.LOGIN">
+    <auth-login
+      [authForm]="authForm"
+      (login)="login()"
+    ></auth-login>
+  </ng-container>
+</section>
