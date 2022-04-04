@@ -21,6 +21,7 @@
       "@ng-games/libs/container/*": ["libs/container-lib/src/lib/*"],
       "@ng-games/libs/mastermind/*": ["libs/mastermind-lib/src/lib/*"],
       "@ng-games/mastermind-lib": ["libs/mastermind-lib/src/index.ts"],
+      "@ng-games/shared/data": ["libs/shared/data/src/index.ts"],
       "@ng-games/shared/game-instructions": [
         "libs/shared/game-instructions/src/index.ts"
       ]

@@ -8,8 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,9 +28,17 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
+    environment.production ? [] : AkitaNgDevtools.forRoot(),
+    AkitaNgRouterStoreModule,
   ],
   bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: NG_ENTITY_SERVICE_CONFIG,
+      useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' },
+    },
+  ],
 })
 export class AppModule {}

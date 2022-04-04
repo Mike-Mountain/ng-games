@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { AuthModule } from '@ng-games/auth';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [LayoutComponent],
@@ -26,6 +27,7 @@ import { AuthModule } from '@ng-games/auth';
     RouterModule,
     MatBadgeModule,
     AuthModule,
+    MatMenuModule,
   ],
   exports: [LayoutComponent],
 })

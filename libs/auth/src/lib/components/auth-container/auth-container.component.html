@@ -3,8 +3,14 @@
   <hr class="mat-divider w-85 mx-auto mb-3 mt-1">
   <ng-container *ngIf="authConfig?.action === action.LOGIN">
     <auth-login
-      [authForm]="authForm"
       (login)="login()"
+      [authForm]="authForm"
     ></auth-login>
+  </ng-container>
+  <ng-container *ngIf="authConfig?.action === action.REGISTER">
+    <auth-register
+      (register)="register()"
+      [registerForm]="authForm"
+    ></auth-register>
   </ng-container>
 </section>

@@ -1,16 +1,16 @@
 {
   "projectType": "library",
-  "root": "libs/auth",
-  "sourceRoot": "libs/auth/src",
-  "prefix": "auth",
+  "root": "libs/shared/data",
+  "sourceRoot": "libs/shared/data/src",
+  "prefix": "ng-games",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/libs/auth"
+        "coverage/libs/shared/data"
       ],
       "options": {
-        "jestConfig": "libs/auth/jest.config.js",
+        "jestConfig": "libs/shared/data/jest.config.js",
         "passWithNoTests": true
       }
     },
@@ -18,8 +18,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/auth/src/**/*.ts",
-          "libs/auth/src/**/*.html"
+          "libs/shared/data/src/**/*.ts",
+          "libs/shared/data/src/**/*.html"
         ]
       }
     }

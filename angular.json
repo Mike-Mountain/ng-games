@@ -9,6 +9,7 @@
     "mastermind": "apps/mastermind",
     "mastermind-e2e": "apps/e2e/mastermind-e2e",
     "mastermind-lib": "libs/mastermind-lib",
+    "shared-data": "libs/shared/data",
     "shared-game-instructions": "libs/shared/game-instructions"
   }
 }

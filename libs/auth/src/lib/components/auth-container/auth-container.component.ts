@@ -7,6 +7,7 @@ import {
   createRegisterForm,
 } from '../../models/auth-config.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { SessionService } from '@ng-games/shared/data';
 
 @Component({
   selector: 'auth-auth-container',
@@ -21,7 +22,8 @@ export class AuthContainerComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AuthContainerComponent>,
     @Inject(MAT_DIALOG_DATA) private data: AuthConfig,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private sessionService: SessionService
   ) {
     this.authConfig = data;
   }
@@ -40,6 +42,14 @@ export class AuthContainerComponent implements OnInit {
   }
 
   login() {
-    console.log(this.authForm?.value);
+    this.sessionService.login(this.authForm?.value).subscribe(() => {
+      this.dialogRef.close();
+    });
+  }
+
+  register() {
+    this.sessionService.register(this.authForm?.value).subscribe(() => {
+      this.dialogRef.close();
+    });
   }
 }

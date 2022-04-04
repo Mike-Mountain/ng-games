@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatButtonModule,
   ],
-  declarations: [AuthContainerComponent, LoginComponent],
+  declarations: [AuthContainerComponent, LoginComponent, RegisterComponent],
 })
 export class AuthModule {}
