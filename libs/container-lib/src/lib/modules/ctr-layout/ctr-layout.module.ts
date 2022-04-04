@@ -10,6 +10,8 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
+import { AuthModule } from '@ng-games/auth';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [LayoutComponent],
@@ -24,6 +26,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatListModule,
     RouterModule,
     MatBadgeModule,
+    AuthModule,
+    MatMenuModule,
   ],
   exports: [LayoutComponent],
 })
