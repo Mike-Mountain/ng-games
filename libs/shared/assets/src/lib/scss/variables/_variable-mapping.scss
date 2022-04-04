@@ -8,7 +8,8 @@
   --accent: #{map-get($accent, 500)};
   --warn: #{map-get($warn, 500)};
   --background: #{map-get($background, 500)};
-  --containerBackground: #{map-get($background, 400)};
+  --containerBackground: #{map-get($background, 700)};
+  --blocksBackground: #{map-get($background, 900)};
 
   --red: #ce1b0d;
   --blue: #265a99;
