@@ -38,14 +38,6 @@ jobs:
           npm run nx run mastermind-lib:lint
           npm run nx run game-instructions:lint
 
-      - name: Test
-        run: |
-          npm run nx run container:test --codeCoverage
-          npm run nx run mastermind:test --codeCoverage
-          npm run nx run container-lib:test --codeCoverage
-          npm run nx run mastermind-lib:test --codeCoverage
-          npm run nx run game-instructions:test --codeCoverage
-
       - name: Build
         run: |
           npm run nx run container:build
