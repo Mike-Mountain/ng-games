@@ -2,12 +2,14 @@
   "version": 2,
   "projects": {
     "assets": "libs/shared/assets",
+    "auth": "libs/auth",
     "container": "apps/container",
     "container-e2e": "apps/e2e/container-e2e",
     "container-lib": "libs/container-lib",
     "mastermind": "apps/mastermind",
     "mastermind-e2e": "apps/e2e/mastermind-e2e",
     "mastermind-lib": "libs/mastermind-lib",
-    "shared-game-instructions": "libs/shared/game-instructions"
+    "data": "libs/shared/data",
+    "game-instructions": "libs/shared/game-instructions"
   }
 }

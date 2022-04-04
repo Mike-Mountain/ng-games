@@ -42,7 +42,21 @@
       </button>
       <div class="w-100 flex-between">
         <span>{{title$ | async}}</span>
-        <button (click)="openInstructions()" mat-icon-button>?</button>
+        <div class="w-25 flex-between">
+          <button (click)="openInstructions()" mat-icon-button>?</button>
+          <button [matMenuTriggerFor]="menu" mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #menu>
+            <ng-container *ngIf="(isLoggedIn$ | async); else notLoggedIn">
+              <button mat-menu-item (click)="logout()">Logout</button>
+            </ng-container>
+            <ng-template #notLoggedIn>
+              <button mat-menu-item (click)="openAuth(action.LOGIN)">Login</button>
+              <button mat-menu-item (click)="openAuth(action.REGISTER)">Register</button>
+            </ng-template>
+          </mat-menu>
+        </div>
       </div>
     </mat-toolbar>
     <router-outlet></router-outlet>

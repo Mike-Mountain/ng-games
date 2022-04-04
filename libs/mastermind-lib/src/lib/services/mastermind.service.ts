@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Color, Colors, MsmGameTurn, Pin } from '../models/mastermind.model';
 import { TurnState } from '../models/turn-state.enum';
 import { BehaviorSubject } from 'rxjs';
-import { WinState } from '@ng-games/libs/mastermind/models/win-state.enum';
+import { WinState } from '../models/win-state.enum';
 
 @Injectable({
   providedIn: 'root',

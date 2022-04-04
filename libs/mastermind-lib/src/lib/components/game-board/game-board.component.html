@@ -51,7 +51,6 @@
         <div class="w-100 h-100 flex-center">
           <button
             class="complete-button"
-            [class.complete]="turn.turnState === turnState.Complete"
             (click)="completeTurn(turn, turnIdx)"
           >
             <ng-container *ngIf="turn.turnState === turnState.Complete">

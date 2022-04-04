@@ -12,19 +12,16 @@ const share = mf.share;
  * This NX_TSCONFIG_PATH environment variable is set by the @nrwl/angular:webpack-browser and it contains
  * the location of the generated temporary tsconfig file.
  */
+// const tsConfigPath =
+//   process.env.NX_TSCONFIG_PATH ??
+//   path.join(__dirname, '../../tsconfig.base.json');
 const tsConfigPath = process.env.NX_TSCONFIG_PATH
   ? path.join(__dirname, '../../' + process.env.NX_TSCONFIG_PATH)
   : path.join(__dirname, '../../tsconfig.base.json');
 
 const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(
-  tsConfigPath,
-  [
-    /* mapped paths to share */
-  ],
-  workspaceRootPath
-);
+sharedMappings.register(tsConfigPath, ['@ng-games/data'], workspaceRootPath);
 
 module.exports = {
   output: {
