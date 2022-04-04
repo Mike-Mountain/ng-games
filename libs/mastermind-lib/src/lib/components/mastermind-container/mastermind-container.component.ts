@@ -17,7 +17,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./mastermind-container.component.scss'],
 })
 export class MastermindContainerComponent implements OnInit, AfterViewInit {
-  @ViewChild('gameOver') private gameOver: TemplateRef<any> | undefined;
+  @ViewChild('gameOver') private gameOver: TemplateRef<HTMLElement> | undefined;
 
   public computerColors: Colors[] = [];
   public colors = colors;
