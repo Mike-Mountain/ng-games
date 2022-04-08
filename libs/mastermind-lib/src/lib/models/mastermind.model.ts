@@ -3,7 +3,7 @@ import { TurnState } from '../models/turn-state.enum';
 export type Colors = 'red' | 'blue' | 'green' | 'yellow' | '';
 export type Pins = 'black' | 'white' | '';
 
-export const colors: Colors[] = ['red', 'blue', 'green', 'yellow'];
+export const colors: string[] = ['red', 'blue', 'green', 'yellow'];
 
 export interface MsmGameTurn {
   colors: Color[];
@@ -13,7 +13,7 @@ export interface MsmGameTurn {
 
 export interface Color {
   selectable: boolean;
-  selectedColor: Colors;
+  selectedColor: string;
 }
 
 export interface Pin {

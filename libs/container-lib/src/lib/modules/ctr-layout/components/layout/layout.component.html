@@ -42,8 +42,13 @@
       </button>
       <div class="w-100 flex-between">
         <span>{{title$ | async}}</span>
-        <div class="w-25 flex-between">
-          <button (click)="openInstructions()" mat-icon-button>?</button>
+        <div class="w-40 flex-between">
+          <button (click)="openSettings()" mat-icon-button>
+            <mat-icon>settings</mat-icon>
+          </button>
+          <button (click)="openInstructions()" mat-icon-button>
+            <mat-icon>help</mat-icon>
+          </button>
           <button [matMenuTriggerFor]="menu" mat-icon-button>
             <mat-icon>account_circle</mat-icon>
           </button>

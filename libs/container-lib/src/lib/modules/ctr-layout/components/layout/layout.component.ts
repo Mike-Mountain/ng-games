@@ -57,6 +57,10 @@ export class LayoutComponent implements OnInit {
     this.toolbarService.showInstructions();
   }
 
+  openSettings() {
+    this.toolbarService.showSettings();
+  }
+
   getNewVersion() {
     this.updates.activateUpdate().then(() => window.location.reload());
   }

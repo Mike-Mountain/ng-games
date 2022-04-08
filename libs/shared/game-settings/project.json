@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/game-settings",
+  "sourceRoot": "libs/shared/game-settings/src",
+  "prefix": "gst",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/game-settings"],
+      "options": {
+        "jestConfig": "libs/shared/game-settings/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/game-settings/src/**/*.ts",
+          "libs/shared/game-settings/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

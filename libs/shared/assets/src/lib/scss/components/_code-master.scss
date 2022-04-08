@@ -1,28 +1,70 @@
-.button-red {
-  background-color: var(--red) !important;
-  border: 1px solid var(--red) !important;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4) !important;
-}
-.button-blue {
-  background-color: var(--blue) !important;
-  border: 1px solid var(--blue) !important;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4) !important;
-}
-.button-green {
-  background-color: var(--green) !important;
-  border: 1px solid var(--green) !important;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4) !important;
-}
 .button-yellow {
   background-color: var(--yellow) !important;
   border: 1px solid var(--yellow) !important;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4) !important;
-}
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-light-green {
+  background-color: var(--light-green) !important;
+  border: 1px solid var(--light-green) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-green {
+  background-color: var(--green) !important;
+  border: 1px solid var(--green) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-light-blue {
+  background-color: var(--light-blue) !important;
+  border: 1px solid var(--light-blue) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-blue {
+  background-color: var(--blue) !important;
+  border: 1px solid var(--blue) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-indigo {
+  background-color: var(--indigo) !important;
+  border: 1px solid var(--indigo) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-purple {
+  background-color: var(--purple) !important;
+  border: 1px solid var(--purple) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-magenta {
+  background-color: var(--magenta) !important;
+  border: 1px solid var(--magenta) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-red {
+  background-color: var(--red) !important;
+  border: 1px solid var(--red) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-orange {
+  background-color: var(--orange) !important;
+  border: 1px solid var(--orange) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-tangerine {
+  background-color: var(--tangerine) !important;
+  border: 1px solid var(--tangerine) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
+.button-peach {
+  background-color: var(--peach) !important;
+  border: 1px solid var(--peach) !important;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4);
+};
 .button-undefined {
   background-color: transparent !important;
-  border: 1px solid var(--blocksBackground);
+  border: 1px solid var(--blocksBackground) !important;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.4) !important;
 }
+
+
 
 .color-block {
   margin: 0 .5rem;

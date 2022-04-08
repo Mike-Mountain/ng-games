@@ -10,8 +10,8 @@ import { WinState } from '../../models/win-state.enum';
   styleUrls: ['./game-board.component.scss'],
 })
 export class GameBoardComponent implements OnInit {
-  @Input() public colors: Colors[] = [];
-  @Input() public masterColors: Colors[] = [];
+  @Input() public colors: string[] = [];
+  @Input() public masterColors: string[] = [];
   @Input() public state = WinState.InProgress;
 
   public turns: MsmGameTurn[] = [];
@@ -24,7 +24,7 @@ export class GameBoardComponent implements OnInit {
     this.turns = this.mastermindService.turns;
   }
 
-  toggleSelected(turnState: TurnState, color: Color, selectedColor?: Colors) {
+  toggleSelected(turnState: TurnState, color: Color, selectedColor?: string) {
     this.mastermindService.toggleSelectedColor(turnState, color, selectedColor);
   }
 

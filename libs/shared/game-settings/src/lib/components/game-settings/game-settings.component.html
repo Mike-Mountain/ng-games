@@ -1,0 +1,49 @@
+<h1 class="text-center">Game Settings</h1>
+<hr class="mat-divider mx-auto my-3 w-25">
+<div class="settings">
+  <form (ngSubmit)="saveSettings()" *ngIf="settingsForm" [formGroup]="settingsForm">
+    <div class="settings-form-field">
+      <label for="turnsNumber">No. of turns:</label>
+      <input formControlName="turnsNumber" id="turnsNumber" type="text">
+    </div>
+
+    <div class="settings-form-field">
+      <label for="colorsNumber">No. of colors:</label>
+      <input formControlName="colorsNumber" id="colorsNUmber" type="text">
+    </div>
+
+    <div class="settings-form-field">
+      <label for="includeBlanks">Include blanks:</label>
+      <input formControlName="includeBlanks" id="includeBlanks" type="checkbox">
+    </div>
+
+    <div class="settings-form-field">
+      <label for="duplicateColors">Duplicate Colors:</label>
+      <input formControlName="duplicateColors" id="duplicateColors" type="checkbox">
+    </div>
+
+    <div class="settings-form-field">
+      <label>Colors:</label>
+      <div class="flex-center w-100">
+        <ng-container *ngFor="let color of settings.codeMaster.colors">
+          <div [class]="'button-' + color" class="color-block"></div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="w-100 flex-center">
+      <div class="color-options">
+        <ng-container *ngFor="let color of colorOptions">
+          <button
+            [class]="'color-block button-' + color"
+            [ngClass]="settings.codeMaster.colors.includes(color) ? 'selected' : ''"
+            [disabled]="settings.codeMaster.colors.includes(color)"
+            (click)="setColor(color)"
+          ></button>
+        </ng-container>
+      </div>
+    </div>
+
+    <button class="w-100 mt-2" color="accent" mat-raised-button type="submit">Save</button>
+    <button class="w-100 mt-2" mat-flat-button matDialogClose="true" type="button">Cancel</button>
+  </form>
+</div>
