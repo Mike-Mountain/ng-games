@@ -11,10 +11,18 @@
   --containerBackground: #{map-get($background, 700)};
   --blocksBackground: #{map-get($background, 900)};
 
-  --red: #ce1b0d;
-  --blue: #265a99;
-  --green: #208a45;
   --yellow: #e0ca00;
+  --light-green: #08d44f;
+  --green: #208a45;
+  --light-blue: #3789ed;
+  --blue: #265a99;
+  --indigo: #7700ff;
+  --purple: #a600ff;
+  --magenta: #c800ff;
+  --red: #ce1b0d;
+  --orange: #ff4d00;
+  --tangerine: #ff8400;
+  --peach: #ffa200;
 
   --primaryValues: #{$primary-values};
   --accentValues: #{$accent-values};
