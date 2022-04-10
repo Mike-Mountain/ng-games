@@ -32,6 +32,18 @@ export class MastermindService {
 
   constructor() {}
 
+  public static canSelectColor(turns: MsmGameTurn[]): boolean {
+    let canSelect = true;
+    turns.forEach((turn) => {
+      turn.colors.forEach((color) => {
+        if (color.selectable) {
+          canSelect = false;
+        }
+      });
+    });
+    return canSelect;
+  }
+
   public selectComputerColors(): string[] {
     const tempArray = Array.from(Array(4).keys());
     const colors: Colors[] = ['red', 'blue', 'green', 'yellow', ''];
@@ -50,7 +62,7 @@ export class MastermindService {
     selectedColor?: string
   ) {
     if (turnState === TurnState.InProgress) {
-      const canSelect = this.canSelectColor();
+      const canSelect = MastermindService.canSelectColor(this.turns);
       if (!selectedColor && !canSelect) {
         return;
       }
@@ -116,17 +128,5 @@ export class MastermindService {
         return -1;
       }
     });
-  }
-
-  private canSelectColor(): boolean {
-    let canSelect = true;
-    this.turns.forEach((turn) => {
-      turn.colors.forEach((color) => {
-        if (color.selectable) {
-          canSelect = false;
-        }
-      });
-    });
-    return canSelect;
   }
 }

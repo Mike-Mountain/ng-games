@@ -29,7 +29,10 @@ export class GameBoardComponent implements OnInit {
   }
 
   completeTurn(turn: MsmGameTurn, idx: number) {
-    if (turn.turnState === TurnState.InProgress) {
+    if (
+      turn.turnState === TurnState.InProgress &&
+      MastermindService.canSelectColor(this.mastermindService.turns)
+    ) {
       turn.turnState = TurnState.Complete;
       if (idx > 0) {
         this.turns[idx - 1].turnState = TurnState.InProgress;
