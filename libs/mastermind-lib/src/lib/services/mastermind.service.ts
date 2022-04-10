@@ -8,11 +8,11 @@ import { WinState } from '../models/win-state.enum';
   providedIn: 'root',
 })
 export class MastermindService {
-  get computerColors(): Colors[] {
+  get computerColors(): string[] {
     return this._computerColors;
   }
 
-  set computerColors(value: Colors[]) {
+  set computerColors(value: string[]) {
     this._computerColors = value;
   }
 
@@ -28,11 +28,23 @@ export class MastermindService {
   public winState$ = this.winStateSrc.asObservable();
 
   private _turns: MsmGameTurn[] = [];
-  private _computerColors: Colors[] = [];
+  private _computerColors: string[] = [];
 
   constructor() {}
 
-  public selectComputerColors(): Colors[] {
+  public static canSelectColor(turns: MsmGameTurn[]): boolean {
+    let canSelect = true;
+    turns.forEach((turn) => {
+      turn.colors.forEach((color) => {
+        if (color.selectable) {
+          canSelect = false;
+        }
+      });
+    });
+    return canSelect;
+  }
+
+  public selectComputerColors(): string[] {
     const tempArray = Array.from(Array(4).keys());
     const colors: Colors[] = ['red', 'blue', 'green', 'yellow', ''];
 
@@ -47,10 +59,10 @@ export class MastermindService {
   public toggleSelectedColor(
     turnState: TurnState,
     color: Color,
-    selectedColor?: Colors
+    selectedColor?: string
   ) {
     if (turnState === TurnState.InProgress) {
-      const canSelect = this.canSelectColor();
+      const canSelect = MastermindService.canSelectColor(this.turns);
       if (!selectedColor && !canSelect) {
         return;
       }
@@ -70,7 +82,7 @@ export class MastermindService {
 
   public completeTurn(turn: MsmGameTurn, gameIdx: number): Pin[] {
     const pins: Pin[] = [];
-    const player: Colors[] = turn.colors.map((color) => color.selectedColor);
+    const player: string[] = turn.colors.map((color) => color.selectedColor);
     const computer = this.computerColors.map((i) => i);
     // Find exact match
     for (let i = player.length - 1; i >= 0; i--) {
@@ -116,17 +128,5 @@ export class MastermindService {
         return -1;
       }
     });
-  }
-
-  private canSelectColor(): boolean {
-    let canSelect = true;
-    this.turns.forEach((turn) => {
-      turn.colors.forEach((color) => {
-        if (color.selectable) {
-          canSelect = false;
-        }
-      });
-    });
-    return canSelect;
   }
 }

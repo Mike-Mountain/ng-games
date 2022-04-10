@@ -12,16 +12,20 @@ const share = mf.share;
  * This NX_TSCONFIG_PATH environment variable is set by the @nrwl/angular:webpack-browser and it contains
  * the location of the generated temporary tsconfig file.
  */
-// const tsConfigPath =
-//   process.env.NX_TSCONFIG_PATH ??
-//   path.join(__dirname, '../../tsconfig.base.json');
-const tsConfigPath = process.env.NX_TSCONFIG_PATH
-  ? path.join(__dirname, '../../' + process.env.NX_TSCONFIG_PATH)
-  : path.join(__dirname, '../../tsconfig.base.json');
+const tsConfigPath =
+  process.env.NX_TSCONFIG_PATH ??
+  path.join(__dirname, '../../tsconfig.base.json');
+// const tsConfigPath = process.env.NX_TSCONFIG_PATH
+//   ? path.join(__dirname, '../../' + process.env.NX_TSCONFIG_PATH)
+//   : path.join(__dirname, '../../tsconfig.base.json');
 
 const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(tsConfigPath, ['@ng-games/data'], workspaceRootPath);
+sharedMappings.register(
+  tsConfigPath,
+  ['@ng-games/shared/data', '@ng-games/shared/game-settings'],
+  workspaceRootPath
+);
 
 module.exports = {
   output: {
@@ -66,6 +70,30 @@ module.exports = {
           includeSecondaries: true,
         },
         '@angular/router': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: 'auto',
+          includeSecondaries: true,
+        },
+        '@datorama/akita': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: 'auto',
+          includeSecondaries: true,
+        },
+        '@angular/forms': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: 'auto',
+          includeSecondaries: true,
+        },
+        '@angular/material': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: 'auto',
+          includeSecondaries: true,
+        },
+        '@angular/fire': {
           singleton: true,
           strictVersion: true,
           requiredVersion: 'auto',

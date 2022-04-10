@@ -5,7 +5,7 @@
         <button
           class="color-button master-color"
           [ngClass]="state !== winState.InProgress ? 'button-' + (color || 'undefined') : ''"
-        ></button>
+        >{{state !== winState.InProgress ? color : ''}}</button>
       </ng-container>
     </div>
     <hr class="game-divider">
@@ -32,7 +32,7 @@
               [class]="'button-' + color.selectedColor"
               [disabled]="turn.turnState !== turnState.InProgress"
               class="color-button"
-            ></button>
+            >{{color.selectedColor || 'blank'}}</button>
             <div
               (click)="toggleSelected(turn.turnState, color)"
               *ngIf="color.selectable"
