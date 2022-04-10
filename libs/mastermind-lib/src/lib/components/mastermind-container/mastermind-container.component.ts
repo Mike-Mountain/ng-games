@@ -42,7 +42,6 @@ export class MastermindContainerComponent implements OnInit, AfterViewInit {
     this.settingsQuery
       .select((settings) => settings.codeMaster)
       .subscribe((settings) => {
-        console.log(settings);
         this.colors = settings.colors;
         this.turns = settings.turnsNumber;
         this.computerColors = this.mastermindService.selectComputerColors();
